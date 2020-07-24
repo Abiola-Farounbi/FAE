@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAE | Mini Blog </title>
+    <link rel='stylesheet' href='bootstrap/css/bootstrap.css'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="icon" href="favicon.png"nhtype="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Piedra&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+    
+
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+           
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script> 
+
+</head>
+<body class='bodyBackground' onload='loader()' >
+    <div class="loading">
+     <img class='loaderPage' src='favicon.png' alt='logo'>
+     <h4 style='color:black;' class='text-center m-3 '> Loading ...</h4>
+      </div>
+    <div class='loaderContent' onload='readPost()' >
+        <div class="bar mb-3">
+            <div class="inner">
+                <!-- <a class='logo'></a> -->
+             <p class='logoName text-center'>   FAE </p>
+         
+                 <nav>
+                     <ul>
+                         <li >
+                          
+                        <button type="button" class='btn btn-secondary button1' id='loginBtn' >
+                            Sign In 
+                          </button>
+                          <button type="button" class='btn btn-secondary button7' id='logoutBtn'  >
+                            Sign Out 
+                          </button>
+                          </li>
+                     </ul>
+                 </nav>
+      
+            </div>
+        </div>
+        <div>
+            <div class=' push'>
+                <div class='card-body'>
+                         <div class="row">
+                             <div class="col-md-4">
+                                <div class="text-center"> <img class='image4' src='dummy.png' alt='avatar'> </div>
+                             </div>
+                             <div class="col-md-8 headingText">
+                                <p class="card-text "></p>
+                                    <h3 class="text-center p-2 m-2">
+                                        <b >
+                                            Creativity Just Got Better
+                                        </b>
+                                    </h3>
+                                    <h5 class="text-center m-2 p-2">
+                                       POST random stuffs that matter on FAE anonymously 
+                                    </h5>
+                                   <div class="text-center">
+                                    <button class="btn btn-secondary button1 m-1"> <a style='color:#c10f3b; text-decoration: none;'href='newPost.html' > Get Creative </a> </button>
+                                   </div>
+                             </div>
+                         </div>
+                    </div>
+                    
+                </div>
+
+        </div>
+        <div class="container" id='cardSection' onload=''> </div>
+        <div class="hide">
+            <div class="container bordered2 p-3">
+                <div class="row">
+                    <div class="col-md-6">
+                     <div>
+                        
+                         <figure><img class='image2' src="signin-image.jpg" alt="image"> 
+                             <h3 class=" text-center" > What's New Today </h3>
+                         </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-6">3
+                     <form id="w-form">
+                         <div class="form-group m-2 p-1">
+                             <label for="namse"><i class="fas fa-user"></i></label>
+                             <input type="text" name="name" id="title" class='form-control identity width' placeholder="Title">
+                         </div> 
+                         <div class="form-group m-2 p-1 ">
+                             <label><i class='fas fa-envelope'></i></label>
+                             <textarea name="text" id='message' class='form-control identity width' maxlength="200" cols="30" rows="10"> My Fisrt Post </textarea>
+                         </div>
+                         <div class="form-group m-2 p-1">
+                             <label for="namse"><i class="fas fa-user"></i></label>
+                             <input type="text" name="name" id="author" class='form-control identity width' placeholder="Created By">
+                         </div> 
+                   
+                           <button id='addPostBtn'   class='btn btn-secondary button1  m-3' > Post </button> 
+                     </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <img src='favicon.png' class='p-2' alt='logo'/>
+                    </div>
+                    <p class="col-lg-12 footer-text text-center">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with <i class="fas fa-heart" aria-hidden="true"></i> by <a style=' color:black;' href="https://abiolaesther.netlify.app/" target="_blank" >Abiola</a></p>
+                        </div>
+                    </div>
+        </footer>                       
+    </div>     
+                                  
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset:400,
+            duration:500
+        });
+    </script>
+    <script src='app.js'></script>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+</body>
+</html> 
+
+
+
+
+      
+          
+                        
+                               
+  
+                            
+
+
+                           
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                            
+
+                       
+
+
+                    
+               
+                    
+
+
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <link rel='stylesheet' href='bootstrap/css/bootstrap.css'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="icon" href="favicon.png"nhtype="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Piedra&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+</head>
+<body class='background'>
+        <div class="bar mb-3">
+            <div class="inner">
+             <p class='logoName text-center'>  <a class='logo'></a> FAE </p>
+             <nav>
+                <ul>
+                    <li >
+                     
+                      <button type="button" class='btn btn-secondary button1 pt-2 pb-2 pr-4 pl-4'  data-toggle="modal" data-target="#locModal">
+                       <a style='color:#c10f3b; text-decoration: none;' href='index.html' > HOME</a>
+                     </button>
+                     </li>
+                </ul>
+            </nav>
+ 
+            
+            </div>
+        </div>
+    <div class='hide'>
+        <div class="loading">
+            <img class='loaderPage' src='favicon.png' alt='logo'>
+            <h4 style='color:white;' class='text-center m-3 '> Loading ...</h4>
+             </div>
+      <div class='loaderContent'>
+           <button type="button" class='btn btn-secondary button1' id='loginBtn' >
+                            Sign In 
+                          </button>
+                          <button type="button" class='btn btn-secondary button7' id='logoutBtn'  >
+                            Sign Out 
+                          </button
+      
+                    
+
+                           <div class='card push'>
+                            <div class='card-body'>
+                            <p class="named"></p>
+                            <div class='card-body'>
+                                What's new today !!!
+                                <button class="btn btn-secondary button1 m-1"> <a style='color:#c10f3b; text-decoration: none;' target='_blank'> Add  a new post </a> </button>
+                            </div>
+                        </div>
+
+                        </div>
+
+
+                        <div class="container" id='cardSection'>
+                           
+                              
+                           
+                        </div>
+
+                    </div>
+        
+       <div class="container bordered2 p-3" >
+           <div class="row">
+               <div class="col-md-3">
+                <div>
+                   
+                    <figure><img class='image2' src="signin-image.jpg" alt="image"> 
+                        <h3 class=" text-center" > Be Creative  </h3>
+                    </figure>
+                   </div>
+               </div>
+               <div class="col-md-9" id='firstSection'>
+                <form id="form">
+                    <div class="form-group m-2 p-1">
+                        <label for="namse"> Title </label>
+                        <input type="text" name="name" id="title" class='form-control identity width' >
+                    </div> 
+                    <div class="form-group m-2 p-1 ">
+                        <label> Content </label>
+                        <textarea name="text" id='message' class='form-control identity width' cols="30" rows="10">  </textarea>
+                    </div>
+                    <div class="form-group m-2 p-1">
+                        <label for="namse">  Display Name </label>
+                        <input type="text" name="name" id="author" class='form-control identity width'>
+                    </div> 
+              
+                     <div class="text-center">
+                        <button id='addPostBtn' class='btn btn-secondary button1 pt-2 pb-2 pr-4 pl-4' > Post </button> 
+                     </div>
+                </form>
+                   
+               </div>
+           </div>
+           
+       </div>
+            
+ 
+
+                            
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <img src='favicon.png' alt='logo'/>
+                    </div>
+                    <p class="col-lg-12 footer-text text-center">
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with <i class="fas fa-heart" aria-hidden="true"></i> by <a style=' color:black;' href="https://colorlib.com" target="_blank" >Abiola</a></p>
+                
+            </div>
+            </div>
+        </footer>
+
+
+
+
+    <script src='app.js'></script>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+</body>
+</html>
