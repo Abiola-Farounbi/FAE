@@ -96,7 +96,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             document.getElementById('cardSection').innerHTML=' ';
             snapshot.forEach(function(post){
                 document.getElementById('cardSection').innerHTML+=`
-               
+                <div class="card m-4 p-3 shadow "  >
                 <div class="card-title text-center">
                     <h3> ${post.data().title}</h3>
                 </div>
@@ -107,6 +107,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                     <h5 > <i>  By  ${post.data().author} </i>  </h5>
                     <span> <i onclick='likeIt(this)'  class="fas fa-heart ml-4" > </i><b class='counts'></b>  <span>
                 </div>
+        </div>
              
                 `
             });
